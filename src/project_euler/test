@@ -1,0 +1,17 @@
+(defn collatz
+  [n]
+  (loop [n n]
+    (if (= n 1)
+      n
+      (if (even? n)
+        (recur (/ n 2))
+        (recur (inc (* n 3)))))))
+
+
+(defn fib [n]
+  (loop [n n
+        a 0
+        b 1]
+    (if (= n 0)
+      b
+      (recur (dec n) b (+ a b)))))
